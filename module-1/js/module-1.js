@@ -354,25 +354,42 @@
 До x1 или после x2
 */
 
-const x1 = 10;
-const x2 = 30;
-const number = 15;
+// const x1 = 10;
+// const x2 = 30;
+// const number = 15;
 
-console.log(`Число ${number} попадает в отрезок до ${x1}`, number < x1);
+// console.log(`Число ${number} попадает в отрезок до ${x1}`, number < x1);
 
-console.log(`Число ${number} попадает в отрезок после ${x2}`, number > x2);
+// console.log(`Число ${number} попадает в отрезок после ${x2}`, number > x2);
 
-const res1 = number > x1 && number < x2;
+// const res1 = number > x1 && number < x2;
 // number > x1 && number < x2
 // 50 > 10 && 50 < 30
 // trye && false
 // запинается на лжи!
-console.log(`Число ${number} попадает в отрезок от ${x1} до ${x2}`, res1);
+// console.log(`Число ${number} попадает в отрезок от ${x1} до ${x2}`, res1);
 
-const res2 =  number < x1 || number > x2;
+// const res2 =  number < x1 || number > x2;
 // number < x1 || number > x2
 // 50 < 10 || 50 > 30
 // false || true
 // запинается на правде! 
 
-console.log(`Число ${number} попадает в отрезок до ${x1} или после ${x2}`, res2);
+// console.log(`Число ${number} попадает в отрезок до ${x1} или после ${x2}`, res2);
+
+// =======Задачка чат ================
+
+/*
+напиши скрипт который проверяет возможность открыть чат спользователем.
+для этого пользователь должен быть:
+- другом
+- онлайн
+- без режима не беспокоить 
+*/
+
+// const isFriend = true;
+// const isOnline = true;
+// const isDnd = false;
+
+// const canOpenChat = isOnline && isFriend && !isDnd;
+// console.log('Можно открыть чат?' ,canOpenChat)
