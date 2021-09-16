@@ -160,12 +160,144 @@
 // let total = 0;
 
 // for(const number of numbers) {
-//     console.log(number);
+//    //  console.log(number);
 
 //     if (number % 2 === 0) {
-//         console.log('чётное');
+//         console.log(`${number} - чётное`);
 
 //         total += number;
 //     }
 // }
 // console.log('total:', total)
+
+
+// ======================= задача =========================
+
+// напиши скрипт поиска логина
+// если логина нет, вывести сообщение `Пользователь (логин) не найден.`
+// если нашли логин, вывести сообщение `Пользователь (логин) найден.`
+
+// сначала через for
+// потом через for...of
+// Логика break
+// метод includes() с тернарным оператором
+
+// const logins = ['mAngoDoge', 'kiwidab3st', 'poly1scute', 'aj4xth3m4n']
+// const loginToFind = 'poly1scute';
+// let message =  `Пользователь ${loginToFind} не найден.`;
+
+// в переменную message мы записали дефолтное значение:
+// то есть изначально пользователь не найден.
+// затем в сравнении если найден, то выводим сообщение 'найден'
+
+// for(let i = 0; i < logins.length; i += 1) {
+//    const login = logins[i]
+
+//    console.log('login:', login)
+//    console.log(`${login} === ${loginToFind}`, login === loginToFind)
+
+//    if(login === loginToFind) {
+//       message = `Пользователь ${loginToFind} найден.`
+//       break;
+//    }
+     
+// }
+// console.log(message)
+
+// теперь через for...of
+
+// for(const login of logins) {
+//    console.log('login:', login)
+//       console.log(`${login} === ${loginToFind}`, login === loginToFind)
+   
+//       if(login === loginToFind) {
+//          message = `Пользователь ${loginToFind} найден.`
+//          break;
+//       }
+// }
+// console.log(message)
+
+// теперь с методом icludes()
+
+// const message = logins.includes(loginToFind) 
+//    ? `Пользователь ${loginToFind} найден.` 
+//    : `Пользователь ${loginToFind} не найден.`;
+
+// console.log(message)
+
+// ======================== ЗАДАЧА ==============================
+
+// напиши скрипт поиска самого маленького числа в массиве,
+// при условии что числа уникальные (не повторяются)
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// // создаём переменную для самого маленького числа
+// let smallestNumber = numbers[0];
+
+// // перебираем массив чисел
+//    for(const number of numbers) {
+// // если попадается число меньше чем smallestNumber, то в smallestNumber перезаписывется новое значение
+//       if(number < smallestNumber) {
+//          smallestNumber = number;
+//       }
+//    }
+//    // выводим результат в консоль
+//    console.log('smallestNumber:', smallestNumber)
+
+// ============================= ЗАДАЧА ===========================
+// напиши скрипт который обьединяет все элементы массива в одно строковое значение.
+// эл-ов может быть произвольное кол-во.
+// пусть эл-ты массива будут разделены запятой.
+// сначала через for
+// потом через join()
+
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax']
+// let string = '';
+
+// for(const friend of friends) {
+//   string += friend + ',';
+// }
+// метод slice не подходит, потому что он не изменяет то на чём вызывается. Он возвращает новую копию!
+// только если записать в string выражение решения с помощью slice, всё заработает
+// string = string.slice(0, -1);
+// console.log(string)
+
+
+// теперь через join()
+// join() сшивает массив в строку (можно добавить разделитель)
+// const string = friends.join(',')
+// console.log(string)
+
+// ====================== ЗАДАЧА НА ЛОГИКУ==================
+// напиши скрипт который заменяет регистр каждого символа на противоположный
+// например если строка 'JavaScript' то на выходе должно получиться 'jAVAsCRIPT'
+
+// const string = 'JavaScript';
+// // метод split берёт строку и разбивает её в массив
+// const letters = string.split('')
+// let invertedString = '';
+
+// // console.log(letters)
+
+// for(const letter of letters) {
+//    // console.log(letter);
+
+//    // if(letter === letter.toLowerCase()) {
+//    //    console.log('эта буква в нижнем регистре -', letter)
+
+//    //    invertedString += letter.toUpperCase();
+//    // } else {
+//    //    console.log('эта буква в верхнем регистре -', letter)
+
+//    //    invertedString += letter.toLowerCase();
+//    // }
+
+//    invertedString += 
+//    letter === letter.toLowerCase() 
+//      ? letter.toUpperCase()
+//      : letter.toLowerCase(); 
+// }
+// console.log(invertedString)
+
+
+// ====================================================================
