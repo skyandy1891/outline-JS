@@ -280,24 +280,134 @@
 // // console.log(letters)
 
 // for(const letter of letters) {
-//    // console.log(letter);
+//    console.log(letter);
 
-//    // if(letter === letter.toLowerCase()) {
-//    //    console.log('эта буква в нижнем регистре -', letter)
+//    if(letter === letter.toLowerCase()) {
+//       console.log('эта буква в нижнем регистре -', letter)
 
-//    //    invertedString += letter.toUpperCase();
-//    // } else {
-//    //    console.log('эта буква в верхнем регистре -', letter)
+//       invertedString += letter.toUpperCase();
+//    } else {
+//       console.log('эта буква в верхнем регистре -', letter)
 
-//    //    invertedString += letter.toLowerCase();
-//    // }
+//       invertedString += letter.toLowerCase();
+//    }
 
-//    invertedString += 
-//    letter === letter.toLowerCase() 
-//      ? letter.toUpperCase()
-//      : letter.toLowerCase(); 
+//    // invertedString += 
+//    // letter === letter.toLowerCase() 
+//    //   ? letter.toUpperCase()
+//    //   : letter.toLowerCase(); 
 // }
 // console.log(invertedString)
 
 
-// ====================================================================
+// ============== задача вызовов цепочки методов =================
+
+// ======================= метод slug =============================
+
+// делаем slug в url из названия статьи (например на dev.to)
+// заголовок статьи состоит только из букв и пробелов
+// ***
+// нормализируем строку
+// разбираем по словам
+// сшиваем строку с разделителем ('-')
+
+// должно получиться top-10-benefits-of-react-framework
+
+// const title = 'Top 10 benefits of React framework';
+// приводим к нижнему регистру
+// const normalizeTitle = title.toLowerCase();
+// console.log(normalizeTitle)
+
+// // разбиваем слова по пробелу
+// const words = normalizeTitle.split(' ')
+// console.log(words)
+
+// // сшиваем слова по тире
+// const slug = words.join('-')
+// console.log(slug)
+// ===========================
+
+//второй вариант: цепочка методов!
+// split и join вызываются не на title, а на результате работы предидущего метода
+// const slug1 = title.toLowerCase().split(' ').join('-');
+// console.log(slug1)
+
+
+// ========================== Задача ==========================
+// напиши скрипт который посчитывает сумму элементов двух массивов
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+
+// вариант 1: перебираем массивы отдельно и плюсуем к total
+// for(let i = 0; i < array1.length; i +=1) {
+//    total += array1[i];
+// }
+
+// for(let i = 0; i < array2.length; i +=1) {
+//    total += array2[i];
+// }
+// console.log(total)
+
+// вариант 2: делаем из двух массивов один и перебираем методом for...of
+// затем плюсуем к total
+// const numbers = array1.concat(array2);
+// for(const number of numbers) {
+//    total += number ;
+// }
+// console.log(total)
+
+
+// ========= работаем со splice() ==================
+// это деструктивный метод, который может менять массив
+
+// работаем с коллекцией карточек в trello
+// метод splice()
+// - удалить
+// - добавить
+// - обновить
+
+// const cards = [
+//    'карточка-1', 
+//    'карточка-2', 
+//    'карточка-3', 
+//    'карточка-4', 
+//    'карточка-5']
+
+//    console.table(cards)
+// удаление по индексу, метод indexOf(),который позволяет найти элемент в массиве по индексу. Если такого эл-та нет он вернёт '-1'
+
+// const cardToRemove = 'карточка-3';
+// const index = cards.indexOf(cardToRemove);
+// console.log(index)
+
+// cards.splice(index, 1);
+// console.table(cards)
+
+
+// добавляем по индексу, методом splice(), который добавляет элемент в произвольное место в массиве
+
+// const cardToInsert = 'карточка-6';
+// const index = 3;
+// например:
+// сначала пишем
+// 1. после какого эл-та нужно добавить
+// 2. ставим 0 если ничего удалять не надо
+// 3. через запятую пишем эл-ты которые нужно добавить в массив
+// cards.splice(3,0,10,'card-9',30);
+// cards.splice(index,0,cardToInsert)
+// console.table(cards)
+
+// обновление по индексу
+// const cardToUpdate = 'карточка-4';
+// const index = cards.indexOf(cardToUpdate);
+
+// console.log(index);
+// 1. говорим в какой индекс вставить
+// 2. потом говорим сколько эл-ов удалить(заменить эл-т на какой-то другой)
+// 3. а затем говорим что нужно вставить
+// cards.splice(1,1,555);
+
+// cards.splice(index, 1, 'обновлённая карточка-4')
+// console.table(cards)
