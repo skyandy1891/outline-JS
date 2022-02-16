@@ -29,11 +29,16 @@
 //  выдаст ошибку!!!
 // const x = 5;
 // x = 10;
+// console.log(x)
+// В консоли будет: (Uncaught TypeError: Assignment to constant variable.)
+
 
 // можно менять значение переменной let !!!
 // let x = 5;
 // x = 10;
 // console.log(x)
+// console.log(x)
+// В консоли будет: 10
 
 // ============== window.alert ==============
 
@@ -191,6 +196,7 @@
 // console.log(result);
 
 // ================================== strings ===========================
+
 // const message = 'В этой строке 26 символов.';
 // console.log(message.length)
 
